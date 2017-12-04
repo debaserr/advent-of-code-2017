@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func isAnagramOf(subject string, candidate string) bool {
+func isAnagramOf(subject, candidate string) bool {
 	if len(subject) != len(candidate) {
 		return false
 	}
