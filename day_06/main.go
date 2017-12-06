@@ -25,12 +25,11 @@ func run() int {
 	}
 
 	banks := getBlocksFromInput(input)
-	cycles := reallocateBanks(banks)
 
+	cycles := reallocateBanks(banks)
 	fmt.Printf("Task 1: %d cycles done\n", cycles)
 
 	cycles = reallocateBanks(banks)
-
 	fmt.Printf("Task 2: %d cycles done\n", cycles)
 
 	return 0
