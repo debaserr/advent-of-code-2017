@@ -39,17 +39,12 @@ func GetScore(in string) (int, int) {
 		Ignore = "!"
 	)
 	score, level, garbageChars := 0, 0, 0
-	inGarbage, ignoreNext := false, false
-	for _, r := range in {
-		if ignoreNext {
-			ignoreNext = false
-			continue
-		}
-
-		char := string(r)
+	inGarbage := false
+	for i := 0; i < len(in); i++ {
+		char := string(in[i])
 
 		if char == Ignore {
-			ignoreNext = true
+			i++
 			continue
 		}
 
