@@ -2,7 +2,6 @@ package main
 
 import (
 	"testing"
-	"fmt"
 )
 
 func TestAnswerTwo(t *testing.T) {
@@ -10,6 +9,6 @@ func TestAnswerTwo(t *testing.T) {
 	input := []int{0, 3, 0, 1, -3}
 	actual := processInstructionsPartTwo(input)
 	if actual != expected {
-		fmt.Errorf("processInstructionsPartTwo: expected %d, got %d", expected, actual)
+		t.Errorf("processInstructionsPartTwo: expected %d, got %d", expected, actual)
 	}
 }
