@@ -32,18 +32,18 @@ func run() int {
 
 func GetScore(in string) (int, int) {
 	const (
-		GroupStart = "{"
-		GroupEnd = "}"
+		GroupStart   = "{"
+		GroupEnd     = "}"
 		GarbageStart = "<"
-		GarbageEnd = ">"
-		Ignore = "!"
+		GarbageEnd   = ">"
+		Cancellation = "!"
 	)
 	score, level, garbageChars := 0, 0, 0
 	inGarbage := false
 	for i := 0; i < len(in); i++ {
 		char := string(in[i])
 
-		if char == Ignore {
+		if char == Cancellation {
 			i++
 			continue
 		}
@@ -64,8 +64,10 @@ func GetScore(in string) (int, int) {
 		case GroupEnd:
 			score += level
 			level--
+			break
 		case GarbageStart:
 			inGarbage = true
+			break
 		}
 	}
 	return score, garbageChars
